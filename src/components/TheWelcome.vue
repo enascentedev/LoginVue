@@ -15,7 +15,10 @@ export default {
 		enviarFormulario() {
 			axios
 				.post("http://localhost:8000/auth/register", this.usuario)
-				.then((resposta) => console.log(resposta))
+				.then((resposta) => console.log(resposta));
+			localStorage.setItem("token", response.data.acess_token);
+			this.$router
+				.push({ name: "AreaRestrita" })
 				.catch((erro) => console.log(erro));
 		},
 	},
