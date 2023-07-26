@@ -15,18 +15,23 @@ export default {
 		enviarFormulario() {
 			axios
 				.post("http://localhost:8000/auth/register", this.usuario)
-				.then((resposta) => console.log(resposta));
-			localStorage.setItem("token", response.data.acess_token);
-			this.$router
-				.push({ name: "AreaRestrita" })
-				.catch((erro) => console.log(erro));
+				.then((response) => {
+					console.log(response);
+					localStorage.setItem("token", response.data.access_token);
+					this.$router
+						.push({ name: "AreaRestrita" })
+						.catch((erro) => console.log(erro));
+				})
+				.catch((error) => {
+					console.error(error);
+				});
 		},
 	},
 };
 </script>
 
 <template>
-	<div class="flex justify-center items-center py-10">
+	<div class="flex justify-center items-center py-5">
 		<div class="mockup-phone px-5">
 			<div class="camera"></div>
 			<div class="display">
@@ -42,7 +47,7 @@ export default {
 							type="password"
 							placeholder="digite sua senha"
 							class="input input-bordered input-lg w-3/4 max-w-xs mx-5 my-3" />
-						<button @submit.prevent class="btn mx-5">Button</button>
+						<button @submit.prevent class="btn mx-5">Entrar</button>
 					</form>
 				</div>
 			</div>
