@@ -1,4 +1,5 @@
 <script>
+import { useSalvaToken } from "@/stores/salvaToken.js";
 import axios from "axios";
 export default {
 	name: "Access",
@@ -17,7 +18,9 @@ export default {
 				.post("http://localhost:8000/auth/register", this.usuario)
 				.then((response) => {
 					console.log(response);
-					localStorage.setItem("token", response.data.access_token);
+					const token = response.data.acess_token;
+					const salvaToken = useSalvaToken();
+					salvaToken.setToken(token);
 					this.$router
 						.push({ name: "AreaRestrita" })
 						.catch((erro) => console.log(erro));

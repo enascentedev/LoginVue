@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import Access from "../components/Access.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+	<main>
+		<Access />
+	</main>
 </template>
