@@ -1,7 +1,7 @@
 <script>
 import { useregisterUser } from "@/stores/registerUser.js";
-import { useSalvaToken } from "@/stores/salvaToken.js";
 import axios from "axios";
+
 export default {
 	name: "Access",
 	data() {
@@ -14,15 +14,15 @@ export default {
 		};
 	},
 	methods: {
-		fazerLogin() {
+		async fazerLogin() {
 			const { email, senha } = this.usuario;
 			const store = useregisterUser();
 
-			// Verifica se as credenciais correspondem aos valores registrados
-			const credenciaisValidas = registerUser.verificarCredenciais(
-				email,
-				senha
-			);
+			// Carrega os usuários da API fake
+			await store.carregarUsuariosRegistrados();
+
+			// Verifica as credenciais
+			const credenciaisValidas = store.verificarCredenciais(email, senha);
 
 			if (credenciaisValidas) {
 				// Redireciona para a área restrita

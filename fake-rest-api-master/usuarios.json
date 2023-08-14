@@ -1,17 +1,1 @@
-{
-	"usuarios": [
-		{
-			"id": 1,
-			"email": "vinicios@alura.com.br",
-			"senha": "123456",
-			"nome": "Vinicios"
-		},
-		{
-			"id": 2,
-			"email": "vinicios@alura.com.br",
-			"senha": "123",
-			"nome": "vinicios"
-		},
-		{ "id": 3, "email": "emanuel", "senha": "da silva", "nome": "" }
-	]
-}
+{"usuarios":[{"id":1,"email":"vinicios@alura.com.br","senha":"123456","nome":"Vinicios"},{"id":2,"email":"vinicios@alura.com.br","senha":"123","nome":"vinicios"},{"id":3,"email":"emanuel","senha":"da silva","nome":""},{"id":4,"email":"emanuelnascente@gmail.com","senha":"123456789","nome":"emanuel"}]}
