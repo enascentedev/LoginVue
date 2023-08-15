@@ -12,6 +12,7 @@ export const useregisterUser = defineStore("registerUser", {
 		async carregarUsuariosRegistrados() {
 			try {
 				const response = await axios.get("http://localhost:8000/usuarios");
+				console.log(response);
 				this.usuariosRegistrados = response.data.usuarios;
 			} catch (error) {
 				console.error("Erro ao carregar usuários:", error);

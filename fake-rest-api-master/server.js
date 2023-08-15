@@ -4,7 +4,7 @@ const jsonServer = require("json-server");
 const jwt = require("jsonwebtoken");
 
 const server = jsonServer.create();
-const router = jsonServer.router("./database.json");
+const router = jsonServer.router("./usuarios.json");
 let userdb = JSON.parse(fs.readFileSync("./usuarios.json", "UTF-8"));
 
 server.use(bodyParser.urlencoded({ extended: true }));
@@ -102,33 +102,33 @@ server.post("/auth/login", (req, res) => {
 	res.status(200).json({ access_token, user });
 });
 
-server.use(/^(?!\/auth).*$/, (req, res, next) => {
-	if (
-		req.headers.authorization === undefined ||
-		req.headers.authorization.split(" ")[0] !== "Bearer"
-	) {
-		const status = 401;
-		const message = "Token inválido";
-		res.status(status).json({ status, message });
-		return;
-	}
-	try {
-		let verifyTokenResult;
-		verifyTokenResult = verifyToken(req.headers.authorization.split(" ")[1]);
+// server.use(/^(?!\/auth).*$/, (req, res, next) => {
+// 	if (
+// 		req.headers.authorization === undefined ||
+// 		req.headers.authorization.split(" ")[0] !== "Bearer"
+// 	) {
+// 		const status = 401;
+// 		const message = "Token inválido";
+// 		res.status(status).json({ status, message });
+// 		return;
+// 	}
+// 	try {
+// 		let verifyTokenResult;
+// 		verifyTokenResult = verifyToken(req.headers.authorization.split(" ")[1]);
 
-		if (verifyTokenResult instanceof Error) {
-			const status = 401;
-			const message = "Token de autenticação não encontrado";
-			res.status(status).json({ status, message });
-			return;
-		}
-		next();
-	} catch (err) {
-		const status = 401;
-		const message = "Token revogado";
-		res.status(status).json({ status, message });
-	}
-});
+// 		if (verifyTokenResult instanceof Error) {
+// 			const status = 401;
+// 			const message = "Token de autenticação não encontrado";
+// 			res.status(status).json({ status, message });
+// 			return;
+// 		}
+// 		next();
+// 	} catch (err) {
+// 		const status = 401;
+// 		const message = "Token revogado";
+// 		res.status(status).json({ status, message });
+// 	}
+// });
 
 server.use(router);
 
