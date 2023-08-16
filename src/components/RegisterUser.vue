@@ -1,6 +1,4 @@
 <template>
-	<!-- AQUI -->
-
 	<form @submit.prevent="registrarUsuario">
 		<div class="space-y-12 sm:space-y-16 px-20 py-5">
 			<div>
@@ -10,7 +8,6 @@
 				<p class="mt-1 max-w-2xl text-sm leading-6 text-gray-600">
 					Informe seus dados para cadastro
 				</p>
-
 				<div
 					class="mt-10 space-y-8 border-b border-gray-900/10 pb-12 sm:space-y-0 sm:divide-y sm:divide-gray-900/10 sm:border-t sm:pb-0">
 					<div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
@@ -26,10 +23,9 @@
 								name="first-name"
 								id="first-name"
 								autocomplete="given-name"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" />
+								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2" />
 						</div>
 					</div>
-
 					<div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
 						<label
 							for="last-name"
@@ -43,7 +39,7 @@
 								name="last-name"
 								id="last-name"
 								autocomplete="family-name"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" />
+								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2" />
 						</div>
 					</div>
 
@@ -52,15 +48,15 @@
 							for="email"
 							class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5"
 							>Email
-							<input v-model="usuario.email" type="email" />
 						</label>
 						<div class="mt-2 sm:col-span-2 sm:mt-0">
 							<input
+								v-model="usuario.email"
 								id="email"
 								name="email"
 								type="email"
 								autocomplete="email"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-md sm:text-sm sm:leading-6" />
+								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-md sm:text-sm sm:leading-6 px-2" />
 						</div>
 					</div>
 					<div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
@@ -75,7 +71,7 @@
 								name="postal-code"
 								id="postal-code"
 								autocomplete="postal-code"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" />
+								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2" />
 						</div>
 					</div>
 					<div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
@@ -90,7 +86,7 @@
 								name="street-address"
 								id="street-address"
 								autocomplete="street-address"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xl sm:text-sm sm:leading-6" />
+								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xl sm:text-sm sm:leading-6 px-2" />
 						</div>
 					</div>
 
@@ -106,7 +102,7 @@
 								name="city"
 								id="city"
 								autocomplete="address-level2"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" />
+								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2" />
 						</div>
 					</div>
 
