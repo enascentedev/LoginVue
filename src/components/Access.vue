@@ -18,17 +18,18 @@ export default {
 			const { email, senha } = this.usuario;
 			const store = useregisterUser();
 
-			// Carrega os usuários da API fake
+			if (!store || typeof store.carregarUsuariosRegistrados !== "function") {
+				console.error(
+					"Store ou método carregarUsuariosRegistrados não definidos"
+				);
+				return;
+			}
+
 			await store.carregarUsuariosRegistrados();
 
-			// Verifica as credenciais
-			const credenciaisValidas = store.verificarCredenciais(email, senha);
-
-			if (credenciaisValidas) {
-				// Redireciona para a área restrita
+			if (store.verificarCredenciais(email, senha)) {
 				this.$router.push({ name: "AreaRestrita" });
 			} else {
-				// Exibe mensagem de erro
 				console.log("Credenciais inválidas");
 			}
 		},
